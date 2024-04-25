@@ -1,0 +1,25 @@
+{
+  "name": "auth_lbo",
+  "version": "1.0.0",
+  "description": "auth la brouette officielle",
+  "main": "indexAuth.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon indexAuth.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "6.3",
+    "mongoose": "^8.1.1"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^3.0.3"
+  }
+}
