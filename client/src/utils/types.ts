@@ -17,10 +17,10 @@ export type TypeDataCard = {
 }
 
 export type TypeDataFetch = {
-        data?: TypeDataCard[],
-        offset: number,
-        length: number,
-        message: string    
+  offset: number,
+  total: number,
+  message: string    
+  response?: TypeDataCard[],
 } 
 
 export type PropsBasket = {

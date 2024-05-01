@@ -19,7 +19,6 @@ module.exports = (app) => {
         bycrpt.compare(password, existingUser.password)
         .then(response => {
             const isPasswordCorrect = response;
-            console.log("response", response);
             if(!isPasswordCorrect){
                return res.status(400).json({
                     reason: 'incorrectPasswordLogin',

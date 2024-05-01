@@ -36,7 +36,7 @@ export const DesktopBar = ({ isHome }: PropsDesktopBar) => {
     { name: "Accessoires", link: "" },
     { name: "Marques", Link: "/marques" },
     { name: "Artistes", link: "" },
-    { name: "promos", link: "promos" },
+    { name: "promos", link: "nouveautes" },
   ];
   React.useEffect(() => {
     if (isLogin) {

@@ -1,12 +1,8 @@
 import axios from "axios";
 import { propsOrder } from "./types";
-//dotenv
-//variables d'environnement
 
-
-const URL_AUTH = 'http://localhost:3500';
 export const API = axios.create({
-    baseURL: `${URL_AUTH}`,
+    baseURL: `${import.meta.env.VITE_URL_AUTH}`,
     withCredentials: true,
   });
   
@@ -35,7 +31,7 @@ export const DetailProduct = async (
     id?: string
 ) => {
     const response = await 
-    fetch(`http://localhost:5000/detailproduct/${typeProduct}/${id}`)
+    fetch(`${import.meta.env.VITE_URL_SERVER}/detailproduct/${typeProduct}/${id}`)
     .then(res => res.json())
     .catch(error => console.log(error));
 
@@ -44,7 +40,7 @@ export const DetailProduct = async (
 
 export const SearchProduct = async (
     search: string, 
-    page:string = "0", 
+    page:string = "1", 
     brand:string | null | undefined = "",
     sizes: string | null | undefined = "",
     sexe:string | null | undefined = "",
@@ -55,7 +51,7 @@ export const SearchProduct = async (
     sort:string | null | undefined = "",
     ) => {
     const reponse = await fetch(
-        `http://localhost:5000/search/${search}?page=${page}&brand=${brand}&sizes=${sizes}&sexe=${sexe}&colors=${colors}&price=${price}&promos=${promos}&ecoLabel=${ecoLabel}&sort=${sort}`,
+        `${import.meta.env.VITE_URL_SERVER}/search/${search}?page=${page}&brand=${brand}&sizes=${sizes}&sexe=${sexe}&colors=${colors}&price=${price}&promos=${promos}&ecoLabel=${ecoLabel}&sort=${sort}`,
         {
         method: "GET"
     })
@@ -67,7 +63,7 @@ export const SearchProduct = async (
 
 export const getProduct = async (
     category: string, 
-    page:string = "0", 
+    page:string = "1", 
     brand:string | null | undefined = "",
     sizes: string | null | undefined = "",
     sexe:string | null | undefined = "",
@@ -76,10 +72,9 @@ export const getProduct = async (
     promos:string | null | undefined = "",
     ecoLabel:string | null | undefined = "",
     sort:string | null | undefined = "",
-    type:string | null | undefined = ""
     ) => {
     const reponse = await fetch(
-        `http://localhost:5000/products/${category}?page=${page}&brand=${brand}&sizes=${sizes}&sexe=${sexe}&colors=${colors}&price=${price}&promos=${promos}&ecoLabel=${ecoLabel}&sort=${sort}&type=${type}`,
+        `${import.meta.env.VITE_URL_SERVER}/products/${category}?page=${page}&brand=${brand}&sizes=${sizes}&sexe=${sexe}&colors=${colors}&price=${price}&promos=${promos}&ecoLabel=${ecoLabel}&sort=${sort}`,
         {
         method: "GET"
     })

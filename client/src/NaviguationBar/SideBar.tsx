@@ -142,7 +142,7 @@ export const MobileMenu = ({
               top ventes
             </Link>
             <Link
-              to="/"
+              to="/products/nouveautes"
               className="h-12 max-[285px]:w-[60px] max-[380px]:h-16 w-[31%] max-[380px]:w-[25%] font-semibold text-[14px] uppercase text-center border border-black py-3"
             >
               promos
@@ -196,10 +196,12 @@ export const MobileMenu = ({
             <p className="h-16 py-5">ARTISTES</p>
             <MdKeyboardArrowRight />
           </button>
-          <button className="w-full text-red-600 text-[17px] border-b-[1px] border-b-[#c3c3c3] font-semibold h-16 px-5 py-3 flex flex-row items-center justify-between">
-            <p className="h-16 py-5">TOP VENTES 🔥</p>
-            <GoPlus color="black" />
-          </button>
+          <Link 
+              to="/products/nouveautes"
+              className="w-full text-red-600 text-[17px] border-b-[1px] border-b-[#c3c3c3] font-semibold h-16 px-5 py-3 flex flex-row items-center justify-between">
+                <p className="h-16 py-5">PROMOS 🔥</p>
+                <GoPlus color="black" />
+          </Link>
           <div className="w-full h-16 bg-[#292b2d] flex flex-row flex-nowrap">
             {isLogin ? (
               <p className="w-full text-white font-semibold py-3 text-center max-[285px]:text-[14px] h-full text-[17px]">

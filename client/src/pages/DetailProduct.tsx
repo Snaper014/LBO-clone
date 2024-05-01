@@ -10,7 +10,7 @@ import { MySwiper } from "../Components/MySwiper";
 import { PropsBasket } from "../utils/types";
 
 type PropsCaractersProduct = {
-  data?: TypeDataCard[];
+  response?: TypeDataCard[];
 };
 
 export const CaractersProduct = () => {
@@ -86,36 +86,37 @@ export const CaractersProduct = () => {
     if (description) {
       reference.current?.insertAdjacentHTML(
         "beforeend",
-        data?.data?.at(0)?.description as string,
+        data?.response?.at(0)?.description as string,
       );
       return;
     }
     DetailProduct(typeProduct, id)
       .then((res) => {
         setSelect((prev) => {
-          return res?.data?.at(0)?.productSizes === ""
+          return res?.response?.at(0)?.productSizes === "undefined"
             ? { size: "Taille Unique", disable: false }
-            : prev;
-        });
+            : {size: prev.size, disable: prev.disable};
+      });
         setData(res);
         window.scroll(0, 0);
       })
       .catch((error) => console.log(error));
   }, [description]);
 
+
   let BasketData = {
-    id: data?.data?.at(0)?.id,
-    image: data?.data?.at(0)?.image,
-    href: data?.data?.at(0)?.href,
-    sticker: data?.data?.at(0)?.sticker,
-    promotion: data?.data?.at(0)?.promotion,
-    brand: data?.data?.at(0)?.brand,
-    title: data?.data?.at(0)?.title,
-    price: data?.data?.at(0)?.price,
-    size: data?.data?.at(0)?.size,
-    photos: data?.data?.at(0)?.photos,
-    logo: data?.data?.at(0)?.logo,
-    category: data?.data?.at(0)?.category,
+    id: data?.response?.at(0)?.id,
+    image: data?.response?.at(0)?.image,
+    href: data?.response?.at(0)?.href,
+    sticker: data?.response?.at(0)?.sticker,
+    promotion: data?.response?.at(0)?.promotion,
+    brand: data?.response?.at(0)?.brand,
+    title: data?.response?.at(0)?.title,
+    price: data?.response?.at(0)?.price,
+    size: data?.response?.at(0)?.size,
+    photos: data?.response?.at(0)?.photos,
+    logo: data?.response?.at(0)?.logo,
+    category: data?.response?.at(0)?.category,
     sizeChoice: select?.size,
     quantity: 1,
   };
@@ -127,19 +128,19 @@ export const CaractersProduct = () => {
           {WidthScreen < 1024 ? (
             <MySwiper
               WidthScreen={WidthScreen}
-              picture={data?.data?.at(0)?.photos}
+              picture={data?.response?.at(0)?.photos}
             />
           ) : (
             <React.Fragment>
-              {!data?.data?.at(0)
+              {!data?.response?.at(0)
                 ? null
-                : data?.data
+                : data?.response
                     ?.at(0)
                     ?.photos?.split("*,")
                     .map((items, index) => (
                       <img
                         src={
-                          data?.data?.at(0)?.photos?.split("*,")?.length ===
+                          data?.response?.at(0)?.photos?.split("*,")?.length ===
                           index + 1
                             ? items?.substring(0, items?.length - 1)
                             : items
@@ -155,28 +156,29 @@ export const CaractersProduct = () => {
           {WidthScreen < 1024 || select.size === "Taille Unique" ? null : (
             <div className="w-full mb-8">
               <img
-                src={data?.data?.at(0)?.logo}
-                alt={data?.data?.at(0)?.title}
+                src={data?.response?.at(0)?.logo}
+                alt={data?.response?.at(0)?.title}
                 className="w-[200px] h-[100px]"
               ></img>
             </div>
           )}
           <h2 className="w-full text-[18px] uppercase mb-3">
-            {data?.data?.at(0)?.brand}
+            {data?.response?.at(0)?.brand}
           </h2>
           <h2 className="w-full font-bold text-[21px] mb-8">
-            {data?.data?.at(0)?.title}
+            {data?.response?.at(0)?.title}
           </h2>
           <div className="w-full flex font-[550] mb-8 flex-row max-[250px]:flex-col justify-between px-1">
             <span className="text-[22px] font-normal">
-              {data?.data?.at(0)?.price} €
+              {data?.response?.at(0)?.price} €
             </span>
             <span className="uppercase text-[#00aa5b]">livré en 48h</span>
           </div>
           <div className="w-full flex flex-row flex-wrap max-lg:px-0 px-2 mb-3">
-            {!data?.data?.at(0)?.productSizes
+            {!data?.response?.at(0)?.productSizes ||
+              data?.response?.at(0)?.productSizes === "undefined"
               ? null
-              : data?.data
+              : data?.response
                   ?.at(0)
                   ?.productSizes?.split("*,")
                   .map((items, index) => {

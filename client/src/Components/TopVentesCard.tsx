@@ -13,7 +13,7 @@ export const TopVentesCard = () => {
       .then((response) => setData(response))
       .catch((error) => console.log(error));
   }, []);
-  //console.log("data", data);
+  console.log("data", data);
 
   return (
     <div className="w-full mb-12 flex flex-col">
@@ -21,10 +21,10 @@ export const TopVentesCard = () => {
         Top Ventes
       </h2>
       <div className="w-full flex flex-row flex-nowrap max-[1024px]:flex-wrap justify-around">
-        {!data?.data ? (
+        {!data?.response ? (
           <p>pas de data</p>
         ) : (
-          data?.data.map((items, index) => {
+          data?.response.map((items, index) => {
             if (index < 6) {
               return (
                 <CardProduct key={index} isHome IndexKey={index} data={items} />
