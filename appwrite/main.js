@@ -9,7 +9,10 @@ const port = 3000;
 
 app
 .use(cors({
-    origin: 'http://localhost:5173'
+    origin: 'https://lbo-clone.vercel.app',
+    methods: ['GET'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
 }))
 .use(express.json())
 .use(morgan("dev"))
