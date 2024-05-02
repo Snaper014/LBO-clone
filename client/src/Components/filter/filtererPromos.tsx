@@ -27,7 +27,7 @@ export const FilterPromos = () => {
         return;
       }
       const Indexstr = promos.indexOf(items);
-      const str = promos.at(Indexstr - 1) === "~" ? `~${items}` : `${items}`;
+      const str = promos.charAt(Indexstr - 1) === "~" ? `~${items}` : `${items}`;
       const newValue = currentSearchParams.get("promos")?.replace(str, "");
       //console.log("newValue", newValue);
       if (newValue === "") {

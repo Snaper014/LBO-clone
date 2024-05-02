@@ -184,9 +184,9 @@ export const Auth = () => {
                   }}
                   className="w-[90%] max-lg:w-full h-14 pl-3 mb-3 border-[3px] border-[#e4e4e4]"
                 />
-                {notification.incorrectEmailLogin?.at(0) ? (
+                {notification.incorrectEmailLogin[0] ? (
                   <span className="text-[0.8em] mb-2 font-semibold text-[#DE1B1B]">
-                    {notification.incorrectEmailLogin?.at(1)}
+                    {notification.incorrectEmailLogin[1]}
                   </span>
                 ) : null}
                 <label
@@ -228,9 +228,9 @@ export const Auth = () => {
                     )}
                   </i>
                 </div>
-                {notification?.incorrectPasswordLogin?.at(0) ? (
+                {notification?.incorrectPasswordLogin[0] ? (
                   <span className="text-[0.8em] mb-2 font-semibold text-[#DE1B1B]">
-                    {notification?.incorrectPasswordLogin?.at(1)}
+                    {notification?.incorrectPasswordLogin[1]}
                   </span>
                 ) : null}
                 <button
@@ -328,9 +328,9 @@ export const Auth = () => {
                     }}
                     className="w-[90%] max-lg:w-full h-14 pl-3 mb-3 border-[3px] border-[#e4e4e4]"
                   />
-                  {notification?.incorrectLastNameR?.at(0) ? (
+                  {notification?.incorrectLastNameR[0] ? (
                     <span className="text-[0.8em] mb-4 font-semibold text-[#DE1B1B]">
-                      {notification?.incorrectLastNameR?.at(1)}
+                      {notification?.incorrectLastNameR[1]}
                     </span>
                   ) : null}
                   <label
@@ -354,9 +354,9 @@ export const Auth = () => {
                     }}
                     className="w-[90%] max-lg:w-full h-14 pl-3 mb-3 border-[3px] border-[#e4e4e4]"
                   />
-                  {notification?.incorrectFirstNameR?.at(0) ? (
+                  {notification?.incorrectFirstNameR[0] ? (
                     <span className="text-[0.8em] mb-4 font-semibold text-[#DE1B1B]">
-                      {notification?.incorrectFirstNameR?.at(1)}
+                      {notification?.incorrectFirstNameR[1]}
                     </span>
                   ) : null}
                   <h2 className="mb-1 text-[#868686] font-semibold">
@@ -462,14 +462,14 @@ export const Auth = () => {
                     }}
                     className="w-[90%] max-lg:w-full h-14 pl-3 mb-3 border-[3px] border-[#e4e4e4]"
                   />
-                  {notification?.emailNoValid?.at(0) ? (
+                  {notification?.emailNoValid[0] ? (
                     <span className="text-[0.8em] mb-4 font-semibold text-[#DE1B1B]">
-                      {notification?.emailNoValid?.at(1)}
+                      {notification?.emailNoValid[1]}
                     </span>
                   ) : null}
-                  {notification.existingUser?.at(0) ? (
+                  {notification.existingUser[0] ? (
                     <span className="text-[0.8em] mb-4 font-semibold text-[#DE1B1B]">
-                      {notification.existingUser?.at(1)}
+                      {notification.existingUser[1]}
                     </span>
                   ) : null}
                   <label
@@ -502,9 +502,9 @@ export const Auth = () => {
                     8 caratères minimum dont 1 lettre miniscule, 1 lettre
                     majscule et un chiffre.
                   </span>
-                  {notification?.incorrectPassword?.at(0) ? (
+                  {notification?.incorrectPassword[0] ? (
                     <span className="text-[0.8em] mb-4 font-semibold text-[#DE1B1B]">
-                      {notification?.incorrectPassword?.at(1)}
+                      {notification?.incorrectPassword[1]}
                     </span>
                   ) : null}
                   <button

@@ -27,7 +27,7 @@ export const FilterColor = () => {
         return;
       }
       const Indexstr = colors.indexOf(items);
-      const str = colors.at(Indexstr - 1) === "~" ? `~${items}` : `${items}`;
+      const str = colors.charAt(Indexstr - 1) === "~" ? `~${items}` : `${items}`;
       const newValue = currentSearchParams.get("colors")?.replace(str, "");
       //console.log("newValue", newValue);
       if (newValue === "") {

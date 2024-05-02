@@ -83,7 +83,7 @@ export const CaractersProduct = () => {
     if (description) {
       reference.current?.insertAdjacentHTML(
         "beforeend",
-        data?.response?.at(0)?.description as string,
+        data?.response?.[0]?.description as string,
       );
       return;
     }
@@ -102,18 +102,18 @@ export const CaractersProduct = () => {
 
 
   let BasketData = {
-    id: data?.response?.at(0)?.id,
-    image: data?.response?.at(0)?.image,
-    href: data?.response?.at(0)?.href,
-    sticker: data?.response?.at(0)?.sticker,
-    promotion: data?.response?.at(0)?.promotion,
-    brand: data?.response?.at(0)?.brand,
-    title: data?.response?.at(0)?.title,
-    price: data?.response?.at(0)?.price,
-    size: data?.response?.at(0)?.size,
-    photos: data?.response?.at(0)?.photos,
-    logo: data?.response?.at(0)?.logo,
-    category: data?.response?.at(0)?.category,
+    id: data?.response?.[0]?.id,
+    image: data?.response?.[0]?.image,
+    href: data?.response?.[0]?.href,
+    sticker: data?.response?.[0]?.sticker,
+    promotion: data?.response?.[0]?.promotion,
+    brand: data?.response?.[0]?.brand,
+    title: data?.response?.[0]?.title,
+    price: data?.response?.[0]?.price,
+    size: data?.response?.[0]?.size,
+    photos: data?.response?.[0]?.photos,
+    logo: data?.response?.[0]?.logo,
+    category: data?.response?.[0]?.category,
     sizeChoice: select?.size,
     quantity: 1,
   };

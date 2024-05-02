@@ -23,7 +23,7 @@ export const FilterGenre = () => {
         return;
       }
       const Indexstr = sexe.indexOf(items);
-      const str = sexe.at(Indexstr - 1) === "~" ? `~${items}` : `${items}`;
+      const str = sexe.charAt(Indexstr - 1) === "~" ? `~${items}` : `${items}`;
       const newValue = currentSearchParams.get("sexe")?.replace(str, "");
       if (newValue === "") {
         setSearchParams((params) => {

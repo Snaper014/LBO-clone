@@ -27,7 +27,7 @@ export const FilterSize = () => {
         return;
       }
       const Indexstr = sizes.indexOf(items);
-      const str = sizes.at(Indexstr - 1) === "~" ? `~${items}` : `${items}`;
+      const str = sizes.charAt(Indexstr - 1) === "~" ? `~${items}` : `${items}`;
       const newValue = currentSearchParams.get("sizes")?.replace(str, "");
       //console.log("newValue", newValue);
       if (newValue === "") {

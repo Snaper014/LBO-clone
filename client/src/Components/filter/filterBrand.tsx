@@ -33,7 +33,7 @@ export const FilterBrand = ({
       }
       const Indexstr = brand.indexOf(items.name);
       const str =
-        brand.at(Indexstr - 1) === "~" ? `~${items.name}` : `${items.name}`;
+        brand.charAt(Indexstr - 1) === "~" ? `~${items.name}` : `${items.name}`;
       const newValue = currentSearchParams.get("brand")?.replace(str, "");
       //console.log("newValue", newValue);
       if (newValue === "") {
