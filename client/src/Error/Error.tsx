@@ -20,7 +20,6 @@ export const Error = () => {
         Top Catégories
       </p>
       <SectionCategorie />
-      {/* section top ventes avec data*/}
     </Page>
   );
 };

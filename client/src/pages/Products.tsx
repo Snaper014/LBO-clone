@@ -86,10 +86,6 @@ export const Products = () => {
       .catch((error) => console.log(error));
   }, [Brands, Sizes, Sexe, Colors, Price, Promos, ecoRes, Sort, product]);
 
-  //console.log("data", data);
-  // console.log("location", location);
-  //console.log("displaybb", displayBB);
-  //console.log("currentpage", currentPage);
 
   return (
     <Page>

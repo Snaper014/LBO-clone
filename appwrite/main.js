@@ -3,7 +3,6 @@ const express = require("express");
 const {Client, Databases, Query} = require('node-appwrite');
 const morgan = require("morgan");
 const cors = require('cors');
-// const fs = require('fs/promises');
 
 const app = express();
 const port = 3000;
@@ -21,7 +20,6 @@ const client = new Client().setEndpoint(process.env.HOSTNAME)
     .setProject(process.env.PROJECT_ID)
     .setKey(process.env.API_KEY);
 const db = new Databases(client, process.env.DATABASE_ID);
-//faut pas instancier query
 
 
 require('./routes/getProducts')(app, Query ,db);

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { TypeDataFetch } from "../utils/types";
 import { CardProduct } from "./CardProduct";
 import { getProduct } from "../utils/fetch";
-//import { useQuery } from "@tanstack/react-query";
 
 export const TopVentesCard = () => {
   const [data, setData] = React.useState<TypeDataFetch | undefined>();
@@ -13,7 +12,6 @@ export const TopVentesCard = () => {
       .then((response) => setData(response))
       .catch((error) => console.log(error));
   }, []);
-  console.log("data", data);
 
   return (
     <div className="w-full mb-12 flex flex-col">

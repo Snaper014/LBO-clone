@@ -90,7 +90,6 @@ export const MobileMenu = ({
         JSON.parse(localStorage.getItem("token_lbo") as string)?.userId,
       )
         .then((res) => {
-          console.log("res", res?.data?.data);
           const result: propsUserInfos = res?.data?.data;
           setUserInfos(result);
         })

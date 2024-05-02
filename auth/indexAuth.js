@@ -1,5 +1,3 @@
-// Auth MongoDb
-// Tester le refresh token
 const express = require('express');
 const cors = require('cors');
 const morgan = require('express');
@@ -22,7 +20,7 @@ require('./routes/signUp')(app);
 require('./routes/signIn')(app);
 require('./routes/getInfosUser')(app);
 require('./routes/Order')(app);
-//delete account
+
 
 app.get("/", (req, res) => {
        res.json({response: "Home index Auth", status: 200}) 

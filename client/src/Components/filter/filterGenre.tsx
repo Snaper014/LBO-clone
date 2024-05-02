@@ -15,7 +15,6 @@ export const FilterGenre = () => {
     const sexe = currentSearchParams.get("sexe");
     if (sexe?.split("~").some((value) => value === items)) {
       const sexe = currentSearchParams.get("sexe");
-      console.log("brand includes", sexe);
       if (!sexe?.includes("~")) {
         setSearchParams((params) => {
           params.delete("sexe");
@@ -26,7 +25,6 @@ export const FilterGenre = () => {
       const Indexstr = sexe.indexOf(items);
       const str = sexe.at(Indexstr - 1) === "~" ? `~${items}` : `${items}`;
       const newValue = currentSearchParams.get("sexe")?.replace(str, "");
-      console.log("newValue", newValue);
       if (newValue === "") {
         setSearchParams((params) => {
           params.delete("sexe");
@@ -41,13 +39,11 @@ export const FilterGenre = () => {
       currentSearchParams.delete("page");
     } else if (sexe !== null) {
       const sexe = currentSearchParams.get("sexe");
-      console.log("sexe !==null ", sexe);
       currentSearchParams.set("sexe", sexe + `~${items}`);
       currentSearchParams.delete("page");
     } else {
       currentSearchParams.append("sexe", items);
       currentSearchParams.delete("page");
-      console.log("sexe premier ajout", sexe);
     }
     setSearchParams(currentSearchParams.toString());
   };

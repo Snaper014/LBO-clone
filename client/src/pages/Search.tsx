@@ -86,10 +86,6 @@ export const SearchPage = () => {
       .catch((error) => console.log(error));
   }, [Brands, Sizes, Sexe, Colors, Price, Promos, ecoRes, Sort, search]);
 
-  console.log("data", data);
-  // console.log("location", location);
-  //console.log("displaybb", displayBB);
-  //console.log("currentpage", currentPage);
 
   return (
     <Page>

@@ -12,7 +12,6 @@ export const Auth = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const checkout = queryParams.get("checkout");
-  //console.log("checkout", checkout);
   const navigate = useNavigate();
   const [isSignIn, setIsSignIn] = React.useState(
     location.pathname === "/login" ? true : false,
@@ -31,7 +30,7 @@ export const Auth = () => {
     email: "",
     password: "",
   });
-  // console.log("query", query);
+
   const [showPassword, setShowPassword] = React.useState(false);
   const [notification, setNotification] = React.useState({
     incorrectEmailLogin: [false, ""],
@@ -47,13 +46,11 @@ export const Auth = () => {
     if (isSignIn) {
       SignIn(query)
         .then((response) => {
-          console.log("response SignUp", response);
           const { id } = jwtDecode<{ id: string }>(response?.data?.token);
           localStorage.setItem(
             "token_lbo",
             JSON.stringify({ token: response?.data?.token, userId: id }),
           );
-          console.log("decoded", id);
           navigate(`${checkout ? "/checkout/delivery" : "/"}`);
         })
         .catch((error) => {
@@ -73,13 +70,11 @@ export const Auth = () => {
     } else {
       SignUp(query)
         .then((response) => {
-          console.log("response SignUp", response);
           const { id } = jwtDecode<{ id: string }>(response?.data?.token);
           localStorage.setItem(
             "token_lbo",
             JSON.stringify({ token: response?.data?.token, userId: id }),
           );
-          console.log("decoded", id);
           navigate(`${checkout ? "/checkout/delivery" : "/"}`);
         })
         .catch((error) => {

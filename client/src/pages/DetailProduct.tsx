@@ -38,7 +38,6 @@ export const CaractersProduct = () => {
       const newData = JSON.parse(
         localStorage.getItem("basket") as string,
       )?.basket.map((items: PropsBasket) => {
-        console.log("items", items);
         return BasketData?.sizeChoice === items?.sizeChoice &&
           BasketData?.title === items?.title
           ? { ...items, quantity: items?.quantity + 1 }
@@ -65,7 +64,6 @@ export const CaractersProduct = () => {
       month: "long",
       day: "numeric",
     });
-    //console.log("date", TestDate);
 
     if (TestDate.includes("dimanche")) {
       gap += 86400000;
@@ -79,7 +77,6 @@ export const CaractersProduct = () => {
     return TestDate;
   };
 
-  //console.log("data", data?.data?.at(0));
   // Suggestion Brand (Complétez votre style)
 
   React.useEffect(() => {

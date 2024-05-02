@@ -44,7 +44,6 @@ export const DesktopBar = ({ isHome }: PropsDesktopBar) => {
         JSON.parse(localStorage.getItem("token_lbo") as string)?.userId,
       )
         .then((res) => {
-          console.log("res", res?.data?.data);
           const result: propsUserInfos = res?.data?.data;
           setUserInfos(result);
         })
@@ -98,7 +97,6 @@ export const DesktopBar = ({ isHome }: PropsDesktopBar) => {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               onKeyDown={(e) => {
-                console.log("e.code: ", e.code);
                 if (e.key === "Enter" || e.code === "Enter") {
                   navigate(`/search/${search}`);
                 } else return null;

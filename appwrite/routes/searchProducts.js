@@ -104,10 +104,6 @@ module.exports = (app, Query, db) => {
             FilteredData
         )
         .then(data => {
-            /* si la requete retourne un résultat avec + 5000 documents
-               cela ne va plus retourner le nombre exacts de documents,
-               il faut gérer ce cas coté front-end 
-            */
            if(data.documents.length === 0){
                 return res.json({
                     message: "Oops ! Aucun produit ne correspond à votre recherche",

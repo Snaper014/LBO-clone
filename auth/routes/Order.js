@@ -6,8 +6,6 @@ module.exports = (app) => {
     app.post("/addOrder/:id", auth, async (req, res) => {
             const body = req.body;
             const id = req.params.id;
-            // console.log("body", body);
-            // console.log("id", id);
             const existingUser = await Users.findOne({_id: id}); 
         try{
             
@@ -26,6 +24,5 @@ module.exports = (app) => {
                 console.log(error);
                 res.status(500).json({message: "error server"});
             }
-
     })
 }   

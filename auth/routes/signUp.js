@@ -9,8 +9,6 @@ module.exports = (app) => {
         const RegexEmail = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/g;
         const RegexName = /^[0-9a-zA-Z._%\-\é\è\'\î\ê\Ê\Î].{2,}$/g;
 
-        // const firstName = "Votrehhj";
-        // const lastName = "VotreNom";
         const {
             genre,
             date_day,

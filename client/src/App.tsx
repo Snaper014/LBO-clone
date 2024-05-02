@@ -7,7 +7,6 @@ import { BrowserRouter } from "react-router-dom";
 import { Error } from "./Error/Error";
 import { ErrorBoundary } from "react-error-boundary";
 import { fallbackRender } from "./Error/FallbackError";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Products } from "./pages/Products";
 import { CaractersProduct } from "./pages/DetailProduct";
 import { DataProvider } from "./utils/Context";
@@ -21,10 +20,8 @@ import { Profil } from "./pages/Profil";
 import { Orders } from "./pages/MyOrders";
 
 function App() {
-  const queryClient = new QueryClient();
   // tests
   return (
-    <QueryClientProvider client={queryClient}>
       <DataProvider>
         <BrowserRouter>
           <ErrorBoundary FallbackComponent={fallbackRender}>
@@ -52,7 +49,6 @@ function App() {
           </ErrorBoundary>
         </BrowserRouter>
       </DataProvider>
-    </QueryClientProvider>
   );
 }
 

@@ -16,7 +16,6 @@ export const FilterPrice = () => {
     max: "",
   });
 
-  console.log("val", value);
 
   const AddOrDelete = (ValMin: string, ValMax: string) => {
     const currentSearchParams = new URLSearchParams(searchParams);

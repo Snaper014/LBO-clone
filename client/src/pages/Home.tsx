@@ -19,8 +19,6 @@ function Home() {
   const [displayMenu, setDisplayMenu] = React.useState(false);
   let Screen = WidthScreen > 1425 ? 1422 : WidthScreen;
 
-  //console.log("displaymenu", displayMenu);
-
   React.useEffect(() => {
     const ResizeWidth = () => {
       if (displayMenu && window.innerWidth > 1024) {

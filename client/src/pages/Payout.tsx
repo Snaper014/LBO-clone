@@ -135,7 +135,6 @@ export const Payout = () => {
                   : "",
               )
                 .then(() => {
-                  console.log("ajout avec succès dans la bd");
                   localStorage.removeItem("basket");
                   localStorage.removeItem("infos");
                 })
