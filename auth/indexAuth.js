@@ -8,7 +8,7 @@ const port = 3500;
 
 app
 .use(cors({
-    origin: 'https://lbo-clone.vercel.app',
+    origin: `${process.env.SITE_URL}`,
     methods: ['GET','POST'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
