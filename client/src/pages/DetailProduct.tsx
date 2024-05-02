@@ -125,19 +125,19 @@ export const CaractersProduct = () => {
           {WidthScreen < 1024 ? (
             <MySwiper
               WidthScreen={WidthScreen}
-              picture={data?.response?.at(0)?.photos}
+              picture={data?.response?.[0]?.photos}
             />
           ) : (
             <React.Fragment>
-              {!data?.response?.at(0)
+              {!data?.response?.[0]
                 ? null
                 : data?.response
-                    ?.at(0)
+                    ?.[0]
                     ?.photos?.split("*,")
-                    .map((items, index) => (
+                    .map((items: string, index: number) => (
                       <img
                         src={
-                          data?.response?.at(0)?.photos?.split("*,")?.length ===
+                          data?.response?.[0]?.photos?.split("*,")?.length ===
                           index + 1
                             ? items?.substring(0, items?.length - 1)
                             : items
@@ -153,32 +153,32 @@ export const CaractersProduct = () => {
           {WidthScreen < 1024 || select.size === "Taille Unique" ? null : (
             <div className="w-full mb-8">
               <img
-                src={data?.response?.at(0)?.logo}
-                alt={data?.response?.at(0)?.title}
+                src={data?.response?.[0]?.logo}
+                alt={data?.response?.[0]?.title}
                 className="w-[200px] h-[100px]"
               ></img>
             </div>
           )}
           <h2 className="w-full text-[18px] uppercase mb-3">
-            {data?.response?.at(0)?.brand}
+            {data?.response?.[0]?.brand}
           </h2>
           <h2 className="w-full font-bold text-[21px] mb-8">
-            {data?.response?.at(0)?.title}
+            {data?.response?.[0]?.title}
           </h2>
           <div className="w-full flex font-[550] mb-8 flex-row max-[250px]:flex-col justify-between px-1">
             <span className="text-[22px] font-normal">
-              {data?.response?.at(0)?.price} €
+              {data?.response?.[0]?.price} €
             </span>
             <span className="uppercase text-[#00aa5b]">livré en 48h</span>
           </div>
           <div className="w-full flex flex-row flex-wrap max-lg:px-0 px-2 mb-3">
-            {!data?.response?.at(0)?.productSizes ||
-              data?.response?.at(0)?.productSizes === "undefined"
+            {!data?.response?.[0]?.productSizes ||
+              data?.response?.[0]?.productSizes === "undefined"
               ? null
               : data?.response
-                  ?.at(0)
+                  ?.[0]
                   ?.productSizes?.split("*,")
-                  .map((items, index) => {
+                  .map((items: string, index: number) => {
                     const splt = items.search("~");
                     const disabled = items.includes("~0");
 
